@@ -39,6 +39,20 @@
                         >;
                 };
 
+                symbol_layer {
+// -----------------------------------------------------------------------------------------
+// |  |     | <  | $   | >   | | |      |     |  [  |  _  |  ]   |     |      |
+// |  |  \  | (  | "   | )   | # |      |  %  |  {  |  =  |  }   |  |  |      |
+// |  |     | :  | *   | +   | ! |      |  `  |  &  |  ^  |  ~   |     |      |
+//                    |   |     |   |    |     |     |     |
+                        bindings = <
+   &trans  &trans   &kp LT    &kp DLLR &kp GT   &kp PIPE &trans      &kp LBKT &kp UNDER &kp RBKT &trans   &trans  
+   &trans  &kp BSLH &kp LPAR  &kp DQT  &kp RPAR &kp HASH &kp PERCENT &kp LBRC &kp EQUAL &kp RBRC &kp PIPE &trans  
+   &trans  &trans   &kp COLON &kp STAR &kp PLUS &kp EXCL &kp GRAVE   &kp AMPS &kp CARET &kp TILDE &trans  &trans  
+              &trans  &trans  &trans  &trans  &trans  &trans
+                        >;
+                };
+
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |

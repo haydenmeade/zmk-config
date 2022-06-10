@@ -71,18 +71,11 @@
                 };
 
                 nav_layer {
-// -----------------------------------------------------------------------------------------
-
-      //_, _   , _  , LCTL(LSFT(KC_C)), LCTL(LSFT(KC_C))  , TD_PRIV ,                      _______ , KC_HOME , KC_UP   , KC_END ,  KC_PGUP , _______ ,
-  // ---------+---------+---------+---------+---------+---------                      ---------+---------+---------+---------+---------+---------
-      //_______ , KC_LGUI , KC_LCTL , KC_LALT , KC_LSFT , TD_SEND ,                      _______ , KC_LEFT , KC_DOWN , KC_RGHT , KC_PGDN , _______ ,
-  // ---------+---------+---------+---------+---------+---------                      ---------+---------+---------+---------+---------+---------
-      //_______ ,LCTL(KC_Z),LCTL(KC_X),LCTL(KC_C),LCTL(KC_V),LSFT(KC_INS) ,                      _______ , KC_PSCR , _______ , _______ , _______ , _______ ,
                         bindings = <
    &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME  &kp UP  &kp END  &kp PG_UP  &trans  
    &trans  &kp LGUI  &kp LCTRL  &kp LALT  &kp LSFT  &trans    &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans  
    &trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(INS)    &trans  &kp PRINTSCREEN &trans  &trans  &trans  &trans  
-              &trans  &trans  &trans                         &trans  &ext_power EP_TOG &trans  
+              &trans  &trans  &trans                         &trans &ext_power EP_TOG &trans  
                         >;
                 };
         };

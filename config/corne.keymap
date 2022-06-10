@@ -37,6 +37,13 @@
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;
           };
+          comexcl: comma_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_EXCLAMATION";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp EXCLAMATION>;
+            mods = <(MOD_RGUI|MOD_RSFT)>;
+        };
     };
         keymap {
                 compatible = "zmk,keymap";
@@ -45,12 +52,12 @@
 // -----------------------------------------------------------------------------------------
 // |  CAPS |  Q  |  X  |  O  |  U  |  ;  |   |  G  |  C   |  R  |  F  |  Z  | BKSP |
 // |  -   |  Y  |  H  |  E  |  A  |  .  |   |  D  |  S   |  T  |  N  |  W  |  '   |
-// | SHFT |  /  |  ,  |  J  |  K  |  '  |   |  B  |  M   |  L  |  P  |  V  | DEL  |
+// | SHFT |  /  |  ,/!  |  J  |  K  |  '  |   |  B  |  M   |  L  |  P  |  V  | DEL  |
 //                    | ESC |  I  | TAB |   | ENT | SPC  | BKSP|
                         bindings = <
    &kp CAPS  &kp Q      &kp X       &kp O &kp U &kp SEMI           &kp G &kp C  &kp R  &kp F &kp Z &kp BSPC
    &kp MINUS &hm LGUI Y &hm LCTRL H &hm LALT E &hm LSFT A &kp DOT  &kp D &hm RSFT S  &hm RALT T  &hm RCTRL N &hm RGUI W &kp SQT
-   &kp LSHFT &kp FSLH   &kp COMMA   &kp J &kp K                    &kp SQT  &kp B &kp M  &kp L  &kp P &kp V &mo 1
+   &kp LSHFT &kp FSLH   &comexcl   &kp J &kp K                    &kp SQT  &kp B &kp M  &kp L  &kp P &kp V &mo 1
                   &lt NAV ESC &lt NUMS I &kp TAB        &kp RET &lt SYMB SPACE &kp BSPC
                         >;
                 };

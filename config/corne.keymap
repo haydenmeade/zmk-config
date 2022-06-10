@@ -13,18 +13,30 @@
 #define SYMB   2
 #define NAV    3
 / {
-
-        behaviors {
-              hm: homerow_mods {
-                  compatible = "zmk,behavior-hold-tap";
-                  label = "HOMEROW_MODS";
-                  #binding-cells = <2>;
-                  tapping-term-ms = <150>;
-                  quick-tap-ms = <0>;
-                  flavor = "tap-preferred";
-                  bindings = <&kp>, <&kp>;
-              };
-        };
+    ZMK_MACRO(p11,
+        wait-ms = <30>;
+        tap-ms = <40>;
+        bindings = <&macro_press &kp LSHFT>
+    , <&macro_tap &kp M>
+    , <&macro_release &kp LSHFT>
+    , <&kp Y &kp S &kp M &kp E &kp L &kp L &kp Y &kp O &kp L &kp D &kp S &kp O &kp C &kp K &kp S &kp N1 &kp N2>;
+    )
+    ZMK_MACRO(p12,
+        wait-ms = <30>;
+        tap-ms = <40>;
+        bindings = <&kp M &kp Y &kp S &kp M &kp E &kp L &kp L &kp Y &kp O &kp L &kp D &kp S &kp O &kp C &kp K &kp S>;
+    )
+    behaviors {
+          hm: homerow_mods {
+              compatible = "zmk,behavior-hold-tap";
+              label = "HOMEROW_MODS";
+              #binding-cells = <2>;
+              tapping-term-ms = <150>;
+              quick-tap-ms = <0>;
+              flavor = "tap-preferred";
+              bindings = <&kp>, <&kp>;
+          };
+    };
         keymap {
                 compatible = "zmk,keymap";
 
@@ -32,13 +44,13 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  X  |  O  |  U  |  ;  |   |  G  |  C   |  R  |  F  |  Z  | BKSP |
 // | CTRL |  Y  |  H  |  E  |  A  |  .  |   |  D  |  S   |  T  |  N  |  W  |  '   |
-// | SHFT |  /  |  !  |  J  |  K  |  '  |   |  B  |  M   |  L  |  P  |  V  | DEL  |
+// | SHFT |  /  |  ,  |  J  |  K  |  '  |   |  B  |  M   |  L  |  P  |  V  | DEL  |
 //                    | ESC |  I  | TAB |   | ENT | SPC  | BKSP|
                         bindings = <
    &kp TAB   &kp Q      &kp X       &kp O &kp U &kp SEMI           &kp G &kp C  &kp R  &kp F &kp Z &kp BSPC
    &kp LCTRL &hm LGUI Y &hm LCTRL H &hm LALT E &hm LSFT A &kp DOT  &kp D &hm RSFT S  &hm RALT T  &hm RCTRL N &hm RGUI W &kp SQT
-   &kp LSHFT &kp FSLH   &kp EXCL    &kp J &kp K                    &kp SQT  &kp B &kp M  &kp L  &kp P &kp V &mo 1
-                  &kp ESC &lt NUMS I &kp TAB        &kp RET &lt SYMB SPACE &kp BSPC
+   &kp LSHFT &kp FSLH   &kp COMMA   &kp J &kp K                    &kp SQT  &kp B &kp M  &kp L  &kp P &kp V &mo 1
+                  &lt NAV ESC &lt NUMS I &kp TAB        &kp RET &lt SYMB SPACE &kp BSPC
                         >;
                 };
 
@@ -72,8 +84,8 @@
 
                 nav_layer {
                         bindings = <
-   &trans  &trans  &trans  &trans  &trans           &trans    &trans  &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans  
-   &trans  &kp LGUI  &kp LCTRL  &kp LALT  &kp LSFT  &trans    &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans  
+   &trans  &trans  &trans  &trans  &trans           &p12    &trans  &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans  
+   &trans  &kp LGUI  &kp LCTRL  &kp LALT  &kp LSFT  &p11    &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans  
    &trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(INS)   &trans  &kp PRINTSCREEN &trans  &trans  &trans  &trans  
               &trans  &trans  &trans  &trans  &trans  &trans
                         >;

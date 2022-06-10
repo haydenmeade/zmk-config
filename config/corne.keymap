@@ -18,10 +18,10 @@
 // | SHFT |  /  |  !  |  J  |  K  |  '  |   |  B  |  M   |  L  |  P  |  V  | ESC  |
 //                    | ESC |  I  | TAB |   | ENT | SPC  | BKSP|
                         bindings = <
-   &kp TAB   &kp Q    &kp X    &kp O &kp U &kp SEMI &kp G &kp C  &kp R  &kp F &kp Z &kp BSPC
-   &kp LCTRL &kp Y    &kp H    &kp E &kp A &kp DOT  &kp D &kp S  &kp T  &kp N &kp W &kp SQT
-   &kp LSHFT &kp FSLH &kp EXCL &kp J &kp K &kp SQT  &kp B &kp M  &kp L  &kp P &kp V &mo 1
-                  &kp ESC &kp I &kp SPACE    &kp RET &kp SPACE &kp BSPC
+   &kp TAB   &kp Q      &kp X       &kp O &kp U                    &kp SEMI &kp G &kp C  &kp R  &kp F &kp Z &kp BSPC
+   &kp LCTRL &mt LGUI Y &mt LCTRL H &mt LALT E &mt LSFT A &kp DOT  &kp D &mt RSFT S  &mt RALT T  &mt RCTRL N &mt RGUI W &kp SQT
+   &kp LSHFT &kp FSLH   &kp EXCL    &kp J &kp K                    &kp SQT  &kp B &kp M  &kp L  &kp P &kp V &mo 1
+                  &kp ESC &kp I &kp SPACE        &kp RET &kp SPACE &kp BSPC
                         >;
                 };
 

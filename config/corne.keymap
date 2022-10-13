@@ -37,6 +37,13 @@
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;
           };
+          dot_at {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_AT";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp AT>;
+            mods = <(MOD_RGUI|MOD_RSFT)>;
+        };
           comexcl: comma_exclamation {
             compatible = "zmk,behavior-mod-morph";
             label = "COMMA_EXCLAMATION";
@@ -51,12 +58,12 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  CAPS |  Q  |  X  |  O  |  U  |  ;  |   |  G  |  C   |  R  |  F  |  Z  | BKSP |
-// |  -   |  Y  |  H  |  E  |  A  |  .  |   |  D  |  S   |  T  |  N  |  W  |  '   |
+// |  -   |  Y  |  H  |  E  |  A  |  ./@  |   |  D  |  S   |  T  |  N  |  W  |  '   |
 // | SHFT |  /  |  ,/!  |  J  |  K  |  '  |   |  B  |  M   |  L  |  P  |  V  | DEL  |
 //                    | ESC |  I  | TAB |   | ENT | SPC  | BKSP|
                         bindings = <
    &kp CAPS  &kp Q      &kp X       &kp O &kp U &kp SEMI           &kp G &kp C  &kp R  &kp F &kp Z &kp BSPC
-   &kp MINUS &hm LGUI Y &hm LCTRL H &hm LALT E &hm LSFT A &kp DOT  &kp D &hm RSFT S  &hm RALT T  &hm RCTRL N &hm RGUI W &kp SQT
+   &kp MINUS &hm LGUI Y &hm LCTRL H &hm LALT E &hm LSFT A &dot_at  &kp D &hm RSFT S  &hm RALT T  &hm RCTRL N &hm RGUI W &kp SQT
    &kp LSHFT &kp FSLH   &comexcl   &kp J &kp K                    &kp SQT  &kp B &kp M  &kp L  &kp P &kp V &mo 1
                   &lt NAV ESC &lt NUMS I &kp TAB        &kp RET &lt SYMB SPACE &kp BSPC
                         >;

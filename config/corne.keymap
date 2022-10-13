@@ -37,7 +37,7 @@
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;
           };
-          dot_at {
+          dot_at: dot_at {
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_AT";
             #binding-cells = <0>;

@@ -3,7 +3,7 @@ set -eo pipefail
 
 ghout=$(gh run list -L 1)
 #*       dotat  .github/workflows/build.yml  master  push   3239928545  1m13s    1m
-read a b c d e jobid f g <<<"$ghout"
+read a b c d e nn jobid f g <<<"$ghout"
 echo "$jobid"
 echo "Wait for gh action..."
 gh run watch "$jobid"

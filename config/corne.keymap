@@ -42,7 +42,7 @@
               label = "LAYER_TAP";
               #binding-cells = <2>;
               pping-term-ms = <150>;
-              quick-tap-ms = <0>
+              quick-tap-ms = <0>;
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;
           };
